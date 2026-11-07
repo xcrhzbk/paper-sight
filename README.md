@@ -59,3 +59,7 @@ python3 -m unittest discover -s tests -v
 自动测试覆盖配置目录、离线双端合并、重复导入、因果更新、冲突确认、旧档案迁移和批注导入。论文讲解质量需要用实际论文检查，自动测试不能代替阅读效果评估。
 
 已用 Socratic-SWE（arXiv:2606.07412v1）生成实际试读并检查页面、图表与批注往返，详见[实测记录](docs/smoke-test.md)。
+
+## 参考文献
+
+阅读 prompt 参考了小红书笔记[《gpt-6读论文最好的Prompt》](https://xhslink.cn/o/3haX0kzRx8M)，由仓库所有者提供。在此基础上，后续补充了逐项梳理论文观点、结论与实验证据的要求。
