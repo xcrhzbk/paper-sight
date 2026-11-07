@@ -4,7 +4,7 @@
 
 Claims & Evidence 要求覆盖正文和附录中的每一个独立观点与结论，逐项解释实验如何检验它、结果支持到什么范围，并明确指出没有直接实验验证的观点及其依据。
 
-基于 [Wang-auspicious/paper-xray](https://github.com/Wang-auspicious/paper-xray) 修改。网页与绘图组件保留原项目实现；旧版论文阅读指令整体替换。许可证为 MIT，原作者版权声明见 [LICENSE](LICENSE)。
+基于 [Wang-auspicious/paper-xray](https://github.com/Wang-auspicious/paper-xray) 和小红书笔记[《gpt-6读论文最好的Prompt》](https://xhslink.cn/o/3haX0kzRx8M)修改。网页与绘图组件保留原项目实现；
 
 ## 安装与使用
 
@@ -60,6 +60,3 @@ python3 -m unittest discover -s tests -v
 
 已用 Socratic-SWE（arXiv:2606.07412v1）生成实际试读并检查页面、图表与批注往返，详见[实测记录](docs/smoke-test.md)。
 
-## 参考文献
-
-阅读 prompt 参考了小红书笔记[《gpt-6读论文最好的Prompt》](https://xhslink.cn/o/3haX0kzRx8M)，由仓库所有者提供。在此基础上，后续补充了逐项梳理论文观点、结论与实验证据的要求。
