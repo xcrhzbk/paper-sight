@@ -1,4 +1,4 @@
-"""Keep the user's reading instructions unchanged during storage/UI changes."""
+"""Keep the user-approved reading instructions unchanged during storage/UI changes."""
 import hashlib
 from pathlib import Path
 import re
@@ -11,7 +11,7 @@ class ReadingPromptTests(unittest.TestCase):
         blocks = re.findall(r'^<system_prompt>\n\n(.*?)\n\n</system_prompt>$', skill, re.M | re.S)
         self.assertEqual(len(blocks), 1)
         self.assertEqual(hashlib.sha256(blocks[0].encode()).hexdigest(),
-                         "d4cc5d0c1ccd494dda68f9fa7b79451de423078694453941e5fa8adbc913418e")
+                         "3ac167d2f58ffd25b41dbc9b2435212e14618d80de4eb18e8304e50c6a04cba8")
 
 
 if __name__ == "__main__":

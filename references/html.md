@@ -1,6 +1,6 @@
 # HTML 交付规格
 
-HTML 分支读这一份。中英文用户共用。正文只按 `SKILL.md` 的 `<system_prompt>` 中用户原始 prompt 执行；本文件只管页面、图、交互和标注层。
+HTML 分支读这一份。中英文用户共用。正文只按 `SKILL.md` 的 `<system_prompt>` 中用户阅读要求执行；本文件只管页面、图、交互和标注层。
 
 ## 1. 页面骨架：照抄 reader-kit
 

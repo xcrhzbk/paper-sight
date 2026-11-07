@@ -1,6 +1,8 @@
 # Paper Sight
 
-按审稿人的视角读论文，围绕 **Research Problem、Prior Work、Core Intuition、Method** 展开。阅读核心使用仓库所有者提供的完整 prompt，保留 HTML 交互图、划线、边注和阅读反馈。
+按审稿人的视角读论文，围绕 **Research Problem、Prior Work、Core Intuition、Method、Claims & Evidence** 展开。阅读核心使用仓库所有者提供的完整 prompt 及后续补充，保留 HTML 交互图、划线、边注和阅读反馈。
+
+Claims & Evidence 要求覆盖正文和附录中的每一个独立观点与结论，逐项解释实验如何检验它、结果支持到什么范围，并明确指出没有直接实验验证的观点及其依据。
 
 基于 [Wang-auspicious/paper-xray](https://github.com/Wang-auspicious/paper-xray) 修改。网页与绘图组件保留原项目实现；旧版论文阅读指令整体替换。许可证为 MIT，原作者版权声明见 [LICENSE](LICENSE)。
 

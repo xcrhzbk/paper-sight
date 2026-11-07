@@ -1,9 +1,9 @@
 ---
 name: paper-sight
-description: "按审稿人的视角讲解论文，回答 Research Problem、Prior Work、Core Intuition、Method；支持 HTML/Markdown、交互图、批注、可配置目录与多端阅读记忆合并。"
+description: "按审稿人的视角讲解论文，回答 Research Problem、Prior Work、Core Intuition、Method、Claims & Evidence；支持 HTML/Markdown、交互图、批注、可配置目录与多端阅读记忆合并。"
 ---
 
-论文阅读的内容、结构、例子和风格只由下方用户原始 prompt 决定。其他文件负责材料、呈现与记忆，不增加另一套阅读要求。
+论文阅读的内容、结构、例子和风格只由下方用户 prompt（含用户后续补充）决定。其他文件负责材料、呈现与记忆，不增加另一套阅读要求。
 
 <workflow>
 所有资源相对本 `SKILL.md` 所在目录定位，安装目录可移动。下文的脚本路径以该目录为基准；命令在用户的任务工作目录运行，Python 使用当前环境可用的解释器。
@@ -13,7 +13,7 @@ description: "按审稿人的视角讲解论文，回答 Research Problem、Prio
 3. **确定交付**：用户选择 HTML 或 MD 时照做，未选择时问一次。档案基础为空时，可在同一次提问中了解数学基础、研究方向和动手经验，不重复已有答案。用户有新的批注时，先按下文规则导入和处理。
 4. **取得材料**：读取论文全文、附录、图表与图注。链接输入取得相应原文；检查官方代码时保留版本信息。材料缺失时说明影响，不以未读取的内容为依据。
 5. **分配输出**：使用解析出的输出根目录，在其下创建 `<短标题>-sight-<文档UUID>` 文件夹，存放文档、论文、图和需要的代码。UUID 每次交付生成，复制同一文档到其他端时保留。用户指定具体位置或文件名时优先遵从。文件链接在当前对话中使用实际绝对路径，记忆和 HTML 元数据保存相对路径。
-6. **讲解与保存**：正文只执行 `<system_prompt>` 的用户原文。按 prompt 在对话中自然穿插可视化，同时保存所选格式。HTML 读取 [html.md](references/html.md)，使用 `references/reader-kit.html` 和 `references/figure-kit.html`；MD 使用 LaTeX 与实际生成的图片，文档内部使用相对图片路径以便整体移动。
+6. **讲解与保存**：正文只执行 `<system_prompt>` 的用户阅读要求。按 prompt 在对话中自然穿插可视化，同时保存所选格式。HTML 读取 [html.md](references/html.md)，使用 `references/reader-kit.html` 和 `references/figure-kit.html`；MD 使用 LaTeX 与实际生成的图片，文档内部使用相对图片路径以便整体移动。
 7. **记录交付**：文件实际存在后，追加 `reading` 事件，key 是文档 UUID，value 含 `title`、`source`、`artifact`（相对输出根目录的位置）、`format` 和可选 `direction`。记录用户明确的概念状态或偏好，运行 `render` 更新可读档案。交付时给出文档链接和材料缺失；HTML 简短提醒用 ✎ 批注、用 ⤓ 保存。
 
 文件移到其他端后，先通过该端配置的输出根目录加 `artifact` 定位；找不到时请用户提供新位置，保留阅读记录，不判定论文或记忆已丢失。代码发布仓库不包含个人记忆或阅读输出。
@@ -27,6 +27,7 @@ description: "按审稿人的视角讲解论文，回答 Research Problem、Prio
 2. **Prior Work**：这个问题之前是否已经被解决？已有研究采用了哪些方法？为什么这些方法仍然存在不足？
 3. **Core Intuition**：这篇论文提出的方法，其核心 Intuition 是什么？请用易懂、清晰、简洁（concise）的语言，解释这篇论文 Core Idea 的本质。
 4. **Method**：这篇论文的具体方法是什么？请结合一个真实、具体的例子，完整讲解从输入（Input）、中间处理（Processing）到输出（Output）的整个 Pipeline。
+5. **Claims & Evidence**：完整梳理论文作者提出的每一个独立观点和结论，覆盖正文与附录，重复表述可合并。逐项说明论文如何设计实验检验它：实验目的、关键变量与控制条件、数据集、对照方法、评价指标、对应图表和具体结果，并解释结果为何支持该结论及其适用范围。缺失的实验细节要明确标出；没有直接实验验证的观点，要说明其依据是理论推导、相关文献还是作者假设。严格区分实验支持与普遍成立的证明，不将结论推广到证据范围之外。
 
 **补充要求：**
 
