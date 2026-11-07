@@ -1,0 +1,8 @@
+/user/
+/memory/
+/library/
+/outputs/
+/.paper-sight.json
+__pycache__/
+*.pyc
+.DS_Store
